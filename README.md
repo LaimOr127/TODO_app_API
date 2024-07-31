@@ -82,3 +82,4 @@ main.py
 # Шаг 10: Запуск приложения
 Запустите приложение:
 ```uvicorn app.main:app --reload```
+# TODO_app_API
