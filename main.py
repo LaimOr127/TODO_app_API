@@ -71,7 +71,7 @@ def update_task(task_id: int, task: schemas.TaskCreate, db: Session = Depends(Se
     - **task_owner**: Задача, принадлежащая текущему пользователю.
     """
     return crud.update_task(db=db, task_id=task_id, task=task)
-
+    
 @app.delete("/tasks/{task_id}", response_model=schemas.Task)
 def delete_task(task_id: int, db: Session = Depends(SessionLocal), current_user: models.User = Depends(auth.get_current_user), task_owner: models.Task = Depends(dependencies.get_task_owner)):
     return crud.delete_task(db=db, task_id=task_id)
